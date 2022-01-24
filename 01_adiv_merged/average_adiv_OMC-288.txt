@@ -1,0 +1,2 @@
+chao1	observed_otus	shannon	simpson	goods_coverage
+44.4341	43.7572	4.97023	0.957698	0.995601
