@@ -2,9 +2,7 @@
 title: "Alpha diversity crAssphage"
 author: "Luigui Gallardo Becerra"
 date: "1/24/2022"
-output:
-  html_document:
-    df_print: paged
+output: pdf_document
 ---
 
 ```{r setup, include=FALSE}
