@@ -1,0 +1,13 @@
+"Var1"	"Var2"	"value"
+"1"	"sum_crasslike"	"Bacteroidetes"	0.236842105263158
+"2"	"average_crasslike"	"Bacteroidetes"	0.236842105263158
+"3"	"sum_crasslike"	"Bacteroidia"	0.236842105263158
+"4"	"average_crasslike"	"Bacteroidia"	0.236842105263158
+"5"	"sum_crasslike"	"Bacteroidales"	0.236842105263158
+"6"	"average_crasslike"	"Bacteroidales"	0.236842105263158
+"7"	"sum_crasslike"	"Prevotellaceae"	0.37719298245614
+"8"	"average_crasslike"	"Prevotellaceae"	0.37719298245614
+"9"	"sum_crasslike"	"Collinsella"	-0.0491228070175439
+"10"	"average_crasslike"	"Collinsella"	-0.0491228070175439
+"11"	"sum_crasslike"	"Bacteroides"	-0.0456140350877193
+"12"	"average_crasslike"	"Bacteroides"	-0.0456140350877193
