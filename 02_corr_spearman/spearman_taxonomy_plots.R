@@ -57,7 +57,7 @@ try(for(row in 1:nrow(taxonomy_transcriptome)){
     geom_text(label = rownames(table), vjust = -1) +
     theme_bw() +
     theme(legend.position = "bottom") +
-    labs(x = paste0(x, ""),
+    labs(x = paste0(x, "\nRelative abundance (log10)"),
          y = paste0(y, "\nRelative abundance")) +
     theme(axis.title = element_text(size = 8)) +
     theme(legend.title = element_text(size = 10)) +
