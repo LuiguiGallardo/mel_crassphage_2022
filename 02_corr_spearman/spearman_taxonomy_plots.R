@@ -52,7 +52,7 @@ try(for(row in 1:nrow(taxonomy_transcriptome)){
         y = get(y)),
         fill = TRUE) +
     geom_point(color = c("blue", "blue", "blue", "blue", "blue", "blue",
-    "orange", "orange", "orange", "orange", "orange", "orange", "orange", "orange", "orange",
+    "orange", "orange", "orange", "orange", "orange", "orange", "orange", "orange",
     "red", "red", "red", "red")) +
     geom_text(label = rownames(table), vjust = -1) +
     theme_bw() +
