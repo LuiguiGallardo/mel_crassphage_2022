@@ -1,0 +1,79 @@
+---
+title: "boxplots_host_crassphage"
+date: "10.03.2022"
+output:
+  pdf_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE)
+library("optparse")
+library("ggplot2")
+library("reshape")
+require("gridExtra")
+library("ggpubr")
+library("ggh4x")
+```
+
+# Boxplots
+```{r, echo=FALSE}
+# Data input
+table <- read.table(file = "table_16s_crasslike.txt",
+                    sep = "\t",
+                    header = TRUE,
+                    check.names = FALSE)
+
+knitr::kable(table)
+
+table <- melt(table,
+              id.vars=c("sample", "group"))
+
+# boxplot
+theme_set(theme_bw())
+boxplot <- ggplot(data = table,
+                  aes(y = value,
+                      x = variable,
+                      color = group)) +
+  geom_boxplot(aes(color = group)) +
+  geom_point(aes(color = group),
+             size = 1,
+             shape = 21,
+             position = position_jitterdodge()) +
+  labs(x="", 
+       y="Relative abundance", 
+       title="Host crassphage") +
+  theme(axis.text.x = element_text(angle = 90,
+                                   hjust = 1,
+                                   vjust = 0.5,
+                                   size = 6),
+        plot.title = element_text(face = "bold",
+                                  hjust = 0.5))
+
+boxplot
+
+# log10 transformation
+table$value=log(table$value)
+
+# boxplot
+boxplot_log10 <- ggplot(data = table,
+                  aes(y = value,
+                      x = variable,
+                      color = group)) +
+  geom_boxplot(aes(color = group)) +
+  geom_point(aes(color = group),
+             size = 1,
+             shape = 21,
+             position = position_jitterdodge()) +
+  labs(x="", 
+       y="Relative abundance (log10)", 
+       title="Host crassphage (log10)") +
+  theme(axis.text.x = element_text(angle = 90,
+                                   hjust = 1,
+                                   vjust = 0.5,
+                                   size = 6),
+        plot.title = element_text(face = "bold",
+                                  hjust = 0.5))
+
+boxplot_log10
+
+```
