@@ -16,6 +16,10 @@
 
 ![crasslike_sum_crasslike_Prevotellaceae](01_plots/crasslike_sum_crasslike_Prevotellaceae.png)
 
+![crasslike_sum_crasslike_Bacilli](01_plots/crasslike_sum_crasslike_Bacilli.png)
+
+![crasslike_sum_crasslike_Eubacterium](01_plots/crasslike_sum_crasslike_Eubacterium.png)
+
 ## Average
 
 ![crasslike_average_crasslike_Bacteroidales](01_plots/crasslike_average_crasslike_Bacteroidales.png)
@@ -31,3 +35,7 @@
 ![crasslike_average_crasslike_Prevotella](01_plots/crasslike_average_crasslike_Prevotella.png)
 
 ![crasslike_average_crasslike_Prevotellaceae](01_plots/crasslike_average_crasslike_Prevotellaceae.png)
+
+![crasslike_average_crasslike_Bacilli](01_plots/crasslike_average_crasslike_Bacilli.png)
+
+![crasslike_average_crasslike_Eubacterium](01_plots/crasslike_average_crasslike_Eubacterium.png)
