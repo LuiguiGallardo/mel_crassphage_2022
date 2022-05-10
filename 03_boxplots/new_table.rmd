@@ -1,0 +1,198 @@
+---
+title: "boxplots_counts_crassphage"
+date: "17.03.2022"
+output:
+  pdf_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE)
+library("optparse")
+library("ggplot2")
+library("reshape")
+require("gridExtra")
+library("ggpubr")
+library("ggh4x")
+library("dplyr")
+library("rstatix")
+
+```
+
+# Nueva tabla
+## Todas las muestras, comparando las medias
+Nota: el punto negro es la media
+
+```{r, echo=FALSE}
+# Data input
+table <- read.table(file = "boxplots_table.txt",
+                    sep = "\t",
+                    header = TRUE,
+                    check.names = FALSE)
+
+p_value <- list(c("NW", "O"),
+                c("O", "OMC"),
+                c("NW", "OMC"))
+
+table <- melt(table,
+              id.vars=c("sample", "group"))
+
+# boxplot mean
+theme_set(theme_bw())
+boxplot_mean <- ggplot(data = table,
+                  aes(y = value,
+                      x = group,
+                      color = group)) +
+  geom_boxplot(aes(color = group)) +
+  geom_point(aes(color = group),
+             size = 1,
+             shape = 21,
+             position = position_jitterdodge()) +
+  stat_summary(fun.y="mean",
+               color="black") +
+  stat_compare_means(comparisons = p_value,
+                     method = "wilcox.test",) +
+  labs(x="", 
+       y="Abundance", 
+       title="Host crassphage") +
+  theme(legend.position = "none",
+        axis.text.x = element_text(angle = 90,
+                                   hjust = 1,
+                                   vjust = 0.5,
+                                   size = 6),
+        plot.title = element_text(face = "bold",
+                                  hjust = 0.5),
+        strip.text.x = element_text(size = 6))
+
+boxplot_mean
+
+```
+
+\newpage
+
+## Comparando las medianas
+Nota: es complicado poner la estadística dentro del boxplot, así que lo tuve que dejar afuera. El punto rojo es la mediana
+
+```{r, echo=FALSE}
+# boxplot_median
+library(rcompanion)
+stat.test <-  pairwiseMedianTest(value ~ group,
+             data  = table,
+             exact = FALSE)
+
+knitr::kable(stat.test)
+
+boxplot_median <- ggplot(data = table,
+                  aes(y = value,
+                      x = group,
+                      color = group)) +
+  geom_boxplot(aes(color = group)) +
+  geom_point(aes(color = group),
+             size = 1,
+             shape = 21,
+             position = position_jitterdodge()) +
+  stat_summary(fun.y="median",
+               color="red") +
+  labs(x="", 
+       y="Abundance", 
+       title="Host crassphage") +
+  theme(legend.position = "none",
+        axis.text.x = element_text(angle = 90,
+                                   hjust = 1,
+                                   vjust = 0.5,
+                                   size = 6),
+        plot.title = element_text(face = "bold",
+                                  hjust = 0.5),
+        strip.text.x = element_text(size = 6))
+
+boxplot_median
+```
+
+\newpage
+
+## Sin la muestra 152, comparando las medias
+Nota: el punto negro es la media
+
+```{r, echo=FALSE}
+# Data input
+table <- read.table(file = "boxplots_table_wo152.txt",
+                    sep = "\t",
+                    header = TRUE,
+                    check.names = FALSE)
+
+p_value <- list(c("NW", "O"),
+                c("O", "OMC"),
+                c("NW", "OMC"))
+
+table <- melt(table,
+              id.vars=c("sample", "group"))
+
+# boxplot mean
+theme_set(theme_bw())
+boxplot_mean <- ggplot(data = table,
+                  aes(y = value,
+                      x = group,
+                      color = group)) +
+  geom_boxplot(aes(color = group)) +
+  geom_point(aes(color = group),
+             size = 1,
+             shape = 21,
+             position = position_jitterdodge()) +
+  stat_summary(fun.y="mean",
+               color="black") +
+  stat_compare_means(comparisons = p_value,
+                     method = "wilcox.test",) +
+  labs(x="", 
+       y="Abundance", 
+       title="Host crassphage") +
+  theme(legend.position = "none",
+        axis.text.x = element_text(angle = 90,
+                                   hjust = 1,
+                                   vjust = 0.5,
+                                   size = 6),
+        plot.title = element_text(face = "bold",
+                                  hjust = 0.5),
+        strip.text.x = element_text(size = 6))
+
+boxplot_mean
+
+```
+
+\newpage
+
+## Comparando las medianas
+Nota: es complicado poner la estadística dentro del boxplot, así que lo tuve que dejar afuera. El punto rojo es la mediana
+
+```{r, echo=FALSE}
+# boxplot_median
+library(rcompanion)
+stat.test <-  pairwiseMedianTest(value ~ group,
+             data  = table,
+             exact = FALSE)
+
+knitr::kable(stat.test)
+
+boxplot_median <- ggplot(data = table,
+                  aes(y = value,
+                      x = group,
+                      color = group)) +
+  geom_boxplot(aes(color = group)) +
+  geom_point(aes(color = group),
+             size = 1,
+             shape = 21,
+             position = position_jitterdodge()) +
+  stat_summary(fun.y="median",
+               color="red") +
+  labs(x="", 
+       y="Abundance", 
+       title="Host crassphage") +
+  theme(legend.position = "none",
+        axis.text.x = element_text(angle = 90,
+                                   hjust = 1,
+                                   vjust = 0.5,
+                                   size = 6),
+        plot.title = element_text(face = "bold",
+                                  hjust = 0.5),
+        strip.text.x = element_text(size = 6))
+
+boxplot_median
+```

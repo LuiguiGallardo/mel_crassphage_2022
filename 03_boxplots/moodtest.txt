@@ -1,0 +1,4 @@
+.y.	group1	group2	p.value	p.adjust
+value	NW	O	0.8383	0.8383
+value	NW	OMC	0.2207	0.4906
+value	O	OMC	0.3271	0.4906
