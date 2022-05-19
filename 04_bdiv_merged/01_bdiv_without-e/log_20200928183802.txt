@@ -1,0 +1,93 @@
+Logging started at 18:38:02 on 28 Sep 2020
+QIIME version: 1.9.1
+
+qiime_config values:
+pick_otus_reference_seqs_fp	/a1/luigui/.local/lib/python2.7/site-packages/qiime_default_reference/gg_13_8_otus/rep_set/97_otus.fasta
+sc_queue	all.q
+pynast_template_alignment_fp	/a1/luigui/.local/lib/python2.7/site-packages/qiime_default_reference/gg_13_8_otus/rep_set_aligned/85_otus.pynast.fasta
+cluster_jobs_fp	start_parallel_jobs.py
+assign_taxonomy_reference_seqs_fp	/a1/luigui/.local/lib/python2.7/site-packages/qiime_default_reference/gg_13_8_otus/rep_set/97_otus.fasta
+torque_queue	friendlyq
+jobs_to_start	1
+denoiser_min_per_core	50
+assign_taxonomy_id_to_taxonomy_fp	/a1/luigui/.local/lib/python2.7/site-packages/qiime_default_reference/gg_13_8_otus/taxonomy/97_otu_taxonomy.txt
+temp_dir	./
+blastall_fp	blastall
+seconds_to_sleep	1
+
+parameter file values:
+beta_diversity:metrics	binary_jaccard,bray_curtis
+parallel:jobs_to_start	1
+
+Input file md5 sums:
+11_bdiv_merged/all_samples_average_28092020_tax.biom: 53e4ee5cb275d39e614968dff158699d
+Metadata-crAss-like.txt: 395b41619df2803237e5aa3045402092
+
+Executing commands.
+
+# Beta Diversity (binary_jaccard) command 
+beta_diversity.py -i 11_bdiv_merged/all_samples_average_28092020_tax.biom -o 11_bdiv_merged/01_bdiv_without-e --metrics binary_jaccard 
+
+Stdout:
+
+Stderr:
+/a1/luigui/.local/lib/python2.7/site-packages/cogent/maths/distance_transform.py:1233: VisibleDeprecationWarning: `rank` is deprecated; use the `ndim` attribute or function instead. To find the rank of a matrix see `numpy.linalg.matrix_rank`.
+  if rank(datamtx) != 2:
+
+# Rename distance matrix (binary_jaccard) command 
+mv 11_bdiv_merged/01_bdiv_without-e/binary_jaccard_all_samples_average_28092020_tax.txt 11_bdiv_merged/01_bdiv_without-e/binary_jaccard_dm.txt
+
+Stdout:
+
+Stderr:
+
+# Principal coordinates (binary_jaccard) command 
+principal_coordinates.py -i 11_bdiv_merged/01_bdiv_without-e/binary_jaccard_dm.txt -o 11_bdiv_merged/01_bdiv_without-e/binary_jaccard_pc.txt 
+
+Stdout:
+
+Stderr:
+/a1/luigui/.local/lib/python2.7/site-packages/skbio/stats/ordination/_principal_coordinate_analysis.py:107: RuntimeWarning: The result contains negative eigenvalues. Please compare their magnitude with the magnitude of some of the largest positive eigenvalues. If the negative ones are smaller, it's probably safe to ignore them, but if they are large in magnitude, the results won't be useful. See the Notes section for more details. The smallest eigenvalue is -0.00449783652285 and the largest is 1.59400159056.
+  RuntimeWarning
+
+# Make emperor plots, binary_jaccard) command 
+make_emperor.py -i 11_bdiv_merged/01_bdiv_without-e/binary_jaccard_pc.txt -o 11_bdiv_merged/01_bdiv_without-e/binary_jaccard_emperor_pcoa_plot/ -m Metadata-crAss-like.txt 
+
+Stdout:
+
+Stderr:
+
+# Beta Diversity (bray_curtis) command 
+beta_diversity.py -i 11_bdiv_merged/all_samples_average_28092020_tax.biom -o 11_bdiv_merged/01_bdiv_without-e --metrics bray_curtis 
+
+Stdout:
+
+Stderr:
+/a1/luigui/.local/lib/python2.7/site-packages/cogent/maths/distance_transform.py:188: VisibleDeprecationWarning: `rank` is deprecated; use the `ndim` attribute or function instead. To find the rank of a matrix see `numpy.linalg.matrix_rank`.
+  if rank(datamtx) != 2:
+
+# Rename distance matrix (bray_curtis) command 
+mv 11_bdiv_merged/01_bdiv_without-e/bray_curtis_all_samples_average_28092020_tax.txt 11_bdiv_merged/01_bdiv_without-e/bray_curtis_dm.txt
+
+Stdout:
+
+Stderr:
+
+# Principal coordinates (bray_curtis) command 
+principal_coordinates.py -i 11_bdiv_merged/01_bdiv_without-e/bray_curtis_dm.txt -o 11_bdiv_merged/01_bdiv_without-e/bray_curtis_pc.txt 
+
+Stdout:
+
+Stderr:
+/a1/luigui/.local/lib/python2.7/site-packages/skbio/stats/ordination/_principal_coordinate_analysis.py:107: RuntimeWarning: The result contains negative eigenvalues. Please compare their magnitude with the magnitude of some of the largest positive eigenvalues. If the negative ones are smaller, it's probably safe to ignore them, but if they are large in magnitude, the results won't be useful. See the Notes section for more details. The smallest eigenvalue is -0.00719410554122 and the largest is 1.31192529782.
+  RuntimeWarning
+
+# Make emperor plots, bray_curtis) command 
+make_emperor.py -i 11_bdiv_merged/01_bdiv_without-e/bray_curtis_pc.txt -o 11_bdiv_merged/01_bdiv_without-e/bray_curtis_emperor_pcoa_plot/ -m Metadata-crAss-like.txt 
+
+Stdout:
+
+Stderr:
+
+
+Logging stopped at 18:38:11 on 28 Sep 2020

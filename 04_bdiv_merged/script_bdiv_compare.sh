@@ -1,0 +1,12 @@
+compare_categories.py --method permanova -i 01_bdiv_without-e/binary_jaccard_dm.txt -o 01_bdiv_without-e/binary_jaccard_permanova -m ../Metadata-crAss-like.txt -c Group
+compare_categories.py --method anosim -i 01_bdiv_without-e/binary_jaccard_dm.txt -o 01_bdiv_without-e/binary_jaccard_anosim -m ../Metadata-crAss-like.txt -c Group
+compare_categories.py --method permanova -i 01_bdiv_without-e/bray_curtis_dm.txt -o 01_bdiv_without-e/bray_curtis_permanova -m ../Metadata-crAss-like.txt -c Group
+compare_categories.py --method anosim -i 01_bdiv_without-e/bray_curtis_dm.txt -o 01_bdiv_without-e/bray_curtis_anosim -m ../Metadata-crAss-like.txt -c Group
+compare_categories.py --method permanova -i 02_bdiv_e37/binary_jaccard_dm.txt -o 02_bdiv_e37/binary_jaccard_permanova -m ../Metadata-crAss-like.txt -c Group
+compare_categories.py --method anosim -i 02_bdiv_e37/binary_jaccard_dm.txt -o 02_bdiv_e37/binary_jaccard_anosim -m ../Metadata-crAss-like.txt -c Group
+compare_categories.py --method permanova -i 02_bdiv_e37/bray_curtis_dm.txt -o 02_bdiv_e37/bray_curtis_permanova -m ../Metadata-crAss-like.txt -c Group
+compare_categories.py --method anosim -i 02_bdiv_e37/bray_curtis_dm.txt -o 02_bdiv_e37/bray_curtis_anosim -m ../Metadata-crAss-like.txt -c Group
+compare_categories.py --method permanova -i 03_bdiv_e44/binary_jaccard_dm.txt -o 03_bdiv_e44/binary_jaccard_permanova -m ../Metadata-crAss-like.txt -c Group
+compare_categories.py --method anosim -i 03_bdiv_e44/binary_jaccard_dm.txt -o 03_bdiv_e44/binary_jaccard_anosim -m ../Metadata-crAss-like.txt -c Group
+compare_categories.py --method permanova -i 03_bdiv_e44/bray_curtis_dm.txt -o 03_bdiv_e44/bray_curtis_permanova -m ../Metadata-crAss-like.txt -c Group
+compare_categories.py --method anosim -i 03_bdiv_e44/bray_curtis_dm.txt -o 03_bdiv_e44/bray_curtis_anosim -m ../Metadata-crAss-like.txt -c Group

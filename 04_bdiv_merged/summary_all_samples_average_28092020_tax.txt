@@ -1,0 +1,37 @@
+Num samples: 22
+Num observations: 221
+Total count: 67,356
+Table density (fraction of non-zero values): 0.158
+
+Counts/sample summary:
+ Min: 8.000
+ Max: 25,578.000
+ Median: 458.500
+ Mean: 3,061.636
+ Std. dev.: 5,486.859
+ Sample Metadata Categories: None provided
+ Observation Metadata Categories: taxonomy
+
+Counts/sample detail:
+OMC-124: 8.000
+H-161: 11.000
+OMC-55: 12.000
+O-445: 37.000
+OMC-125: 44.000
+OMC-126: 48.000
+O-418: 56.000
+O-420: 123.000
+O-434: 152.000
+H-120: 204.000
+H-314: 363.000
+OMC-288: 554.000
+H-119: 1,172.000
+O-122: 1,489.000
+H-193: 4,124.000
+O-123: 4,249.000
+O-39: 4,588.000
+H-10: 4,689.000
+OMC-446: 6,009.000
+H-118: 6,669.000
+O-121: 7,177.000
+O-152: 25,578.000
