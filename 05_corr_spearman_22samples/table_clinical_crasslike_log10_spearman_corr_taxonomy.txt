@@ -1,0 +1,13 @@
+"Var1"	"Var2"	"value"
+"1"	"average_crasslike"	"sum_crasslike"	1
+"2"	"sum_crasslike"	"average_crasslike"	1
+"3"	"sum_crasslike"	"Waist.circumference"	0.0631578947368421
+"4"	"average_crasslike"	"Waist.circumference"	0.0631578947368421
+"5"	"sum_crasslike"	"Diastolic.BP"	0.316265418903322
+"6"	"average_crasslike"	"Diastolic.BP"	0.316265418903322
+"7"	"sum_crasslike"	"Glucose"	-0.246022145229983
+"8"	"average_crasslike"	"Glucose"	-0.246022145229983
+"9"	"sum_crasslike"	"TG"	0.0225733698213814
+"10"	"average_crasslike"	"TG"	0.0225733698213814
+"11"	"sum_crasslike"	"HDL"	-0.266969540482372
+"12"	"average_crasslike"	"HDL"	-0.266969540482372

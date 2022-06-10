@@ -1,0 +1,25 @@
+## Correlaciones de Spearman de los parámetros clínicos con los promedios (log10) y sumatorias (log10) de crasslike para 23 muestras
+
+### Con el promedio de crasslike
+
+![table_clinical_crasslike_log10_average_crasslike_Diastolic.BP](03_clinical_crasslike_log10/table_clinical_crasslike_log10_average_crasslike_Diastolic.BP.png)
+
+![table_clinical_crasslike_log10_average_crasslike_Glucose](03_clinical_crasslike_log10/table_clinical_crasslike_log10_average_crasslike_Glucose.png)
+
+![table_clinical_crasslike_log10_average_crasslike_HDL](03_clinical_crasslike_log10/table_clinical_crasslike_log10_average_crasslike_HDL.png)
+
+![table_clinical_crasslike_log10_average_crasslike_TG](03_clinical_crasslike_log10/table_clinical_crasslike_log10_average_crasslike_TG.png)
+
+![table_clinical_crasslike_log10_average_crasslike_Waist.circumference](03_clinical_crasslike_log10/table_clinical_crasslike_log10_average_crasslike_Waist.circumference.png)
+
+### Con la sumatoria de crasslike
+
+![table_clinical_crasslike_log10_sum_crasslike_Diastolic.BP](03_clinical_crasslike_log10/table_clinical_crasslike_log10_sum_crasslike_Diastolic.BP.png)
+
+![table_clinical_crasslike_log10_sum_crasslike_Glucose](03_clinical_crasslike_log10/table_clinical_crasslike_log10_sum_crasslike_Glucose.png)
+
+![table_clinical_crasslike_log10_sum_crasslike_HDL](03_clinical_crasslike_log10/table_clinical_crasslike_log10_sum_crasslike_HDL.png)
+
+![table_clinical_crasslike_log10_sum_crasslike_TG](03_clinical_crasslike_log10/table_clinical_crasslike_log10_sum_crasslike_TG.png)
+
+![table_clinical_crasslike_log10_sum_crasslike_Waist.circumference](03_clinical_crasslike_log10/table_clinical_crasslike_log10_sum_crasslike_Waist.circumference.png)
