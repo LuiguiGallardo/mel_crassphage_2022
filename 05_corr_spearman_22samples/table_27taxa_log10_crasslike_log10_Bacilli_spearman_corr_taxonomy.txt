@@ -1,0 +1,5 @@
+"Var1"	"Var2"	"value"
+"1"	"average_crasslike"	"sum_crasslike"	1
+"2"	"sum_crasslike"	"average_crasslike"	1
+"3"	"sum_crasslike"	"Bacilli"	-0.53859649122807
+"4"	"average_crasslike"	"Bacilli"	-0.53859649122807
