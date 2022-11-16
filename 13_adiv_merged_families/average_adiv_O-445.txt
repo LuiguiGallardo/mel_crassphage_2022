@@ -1,0 +1,2 @@
+chao1	observed_otus	shannon	simpson	goods_coverage
+1.68631	1.68631	0.198149	0.0673614	0.992194	

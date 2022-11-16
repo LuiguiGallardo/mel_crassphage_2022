@@ -1,0 +1,3 @@
+# Correlations clinical parameters vs family crassphage
+
+![table_clinical_crasslike_log10_Beta_avg_Waist.circumference](/Users/luigui/Documents/mel_crassphage_2022/11_corr_spearman_crassfam_clinical/01_spearman_clinical_log10/table_clinical_crasslike_log10_Beta_avg_Waist.circumference.png)

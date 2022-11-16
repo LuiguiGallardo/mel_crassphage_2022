@@ -20,8 +20,8 @@ table <- read.delim(file = args[1],
 table_transposed <- t(table)
 
 # Parameters of Spearman correlation
-cor.cutoff = 0.3 # This is the R value, could be changed
-p.cutoff = 0.049 # This is the p-value, could be changed
+cor.cutoff = 0.1 # This is the R value, could be changed
+p.cutoff = 0.05 # This is the p-value, could be changed
 
 # Correlation matrix
 res.cor <- rcorr(t(table_transposed),
@@ -30,8 +30,8 @@ matrix.cor<-res.cor$r # This is the R value matrix
 matrix.cor.p<-res.cor$P # This is the p-value matrix
 
 # Filter of R and p values
-#matrix.cor[which(matrix.cor>=(-cor.cutoff) & matrix.cor <= cor.cutoff)]=0 # Filter of R (positive and negative)
-#matrix.cor[which(matrix.cor.p>p.cutoff)]=0 # Filter of p-value
+matrix.cor[which(matrix.cor>=(-cor.cutoff) & matrix.cor <= cor.cutoff)]=0 # Filter of R (positive and negative)
+matrix.cor[which(matrix.cor.p > p.cutoff)]=0 # Filter of p-value
 
 # Reshape the correlation matrix
 melted_cormat <- melt(matrix.cor)
@@ -64,7 +64,7 @@ try(for(row in 1:nrow(taxonomy_transcriptome)){
     theme(legend.text = element_text(size = 10)) +
     theme(axis.text = element_text(size = 10)) +
     stat_smooth(level = 0.95, method = "lm") +
-    stat_cor(method = "spearman", size = 5 ) +
+    stat_cor(method = "spearman", size = 5, label.x.npc = "left", label.y.npc = "bottom") +
     theme(panel.grid.major = element_line(colour = "gray"),
         panel.grid.minor = element_line(colour = "gray"))
     png(paste0(args[2], "_", x, "_", y, ".png"))

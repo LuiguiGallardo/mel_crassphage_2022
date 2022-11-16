@@ -1,0 +1,68 @@
+Logging started at 15:29:55 on 05 Sep 2022
+QIIME version: 1.9.1
+
+qiime_config values:
+pick_otus_reference_seqs_fp	/a1/luigui/.local/lib/python2.7/site-packages/qiime_default_reference/gg_13_8_otus/rep_set/97_otus.fasta
+sc_queue	all.q
+pynast_template_alignment_fp	/a1/luigui/.local/lib/python2.7/site-packages/qiime_default_reference/gg_13_8_otus/rep_set_aligned/85_otus.pynast.fasta
+cluster_jobs_fp	start_parallel_jobs.py
+assign_taxonomy_reference_seqs_fp	/a1/luigui/.local/lib/python2.7/site-packages/qiime_default_reference/gg_13_8_otus/rep_set/97_otus.fasta
+torque_queue	friendlyq
+jobs_to_start	1
+denoiser_min_per_core	50
+assign_taxonomy_id_to_taxonomy_fp	/a1/luigui/.local/lib/python2.7/site-packages/qiime_default_reference/gg_13_8_otus/taxonomy/97_otu_taxonomy.txt
+temp_dir	./
+blastall_fp	blastall
+seconds_to_sleep	1
+
+parameter file values:
+
+Input file md5 sums:
+abs_host_16s_filt.biom: 0782efbd20f2a5c9e5c90fb419a04e49
+
+Executing commands.
+
+# Summarize Taxonomy command 
+summarize_taxa.py -i abs_host_16s_filt.biom -o sumtax_host_tmp/ 
+
+Stdout:
+
+Stderr:
+
+# Plot Taxonomy Summary command 
+plot_taxa_summary.py -i sumtax_host_tmp/abs_host_16s_filt_L2.txt,sumtax_host_tmp/abs_host_16s_filt_L3.txt,sumtax_host_tmp/abs_host_16s_filt_L4.txt,sumtax_host_tmp/abs_host_16s_filt_L5.txt,sumtax_host_tmp/abs_host_16s_filt_L6.txt -o sumtax_host_tmp//taxa_summary_plots/ 
+
+
+
+*** ERROR RAISED DURING STEP: Plot Taxonomy Summary
+Command run was:
+ plot_taxa_summary.py -i sumtax_host_tmp/abs_host_16s_filt_L2.txt,sumtax_host_tmp/abs_host_16s_filt_L3.txt,sumtax_host_tmp/abs_host_16s_filt_L4.txt,sumtax_host_tmp/abs_host_16s_filt_L5.txt,sumtax_host_tmp/abs_host_16s_filt_L6.txt -o sumtax_host_tmp//taxa_summary_plots/ 
+Command returned exit status: 1
+Stdout:
+
+Stderr
+Traceback (most recent call last):
+  File "/home/luigui/.local/bin//plot_taxa_summary.py", line 278, in <module>
+    main()
+  File "/home/luigui/.local/bin//plot_taxa_summary.py", line 274, in main
+    resize_nth_label, label_type, include_html_legend)
+  File "/a1/luigui/.local/lib/python2.7/site-packages/qiime/plot_taxa_summary.py", line 1138, in make_all_charts
+    resize_nth_label, label_type, include_html_legend))
+  File "/a1/luigui/.local/lib/python2.7/site-packages/qiime/plot_taxa_summary.py", line 1073, in get_counts
+    label_type, include_html_legend))
+  File "/a1/luigui/.local/lib/python2.7/site-packages/qiime/plot_taxa_summary.py", line 861, in make_HTML_table
+    props={'title': title})
+  File "/a1/luigui/.local/lib/python2.7/site-packages/qiime/plot_taxa_summary.py", line 466, in make_area_bar_chart
+    fig = figure(figsize=(plot_width, plot_height))
+  File "/a1/luigui/.local/lib/python2.7/site-packages/matplotlib/pyplot.py", line 533, in figure
+    **kwargs)
+  File "/a1/luigui/.local/lib/python2.7/site-packages/matplotlib/backend_bases.py", line 161, in new_figure_manager
+    return cls.new_figure_manager_given_figure(num, fig)
+  File "/a1/luigui/.local/lib/python2.7/site-packages/matplotlib/backends/_backend_tk.py", line 1046, in new_figure_manager_given_figure
+    window = Tk.Tk(className="matplotlib")
+  File "/usr/lib/python2.7/lib-tk/Tkinter.py", line 1823, in __init__
+    self.tk = _tkinter.create(screenName, baseName, className, interactive, wantobjects, useTk, sync, use)
+_tkinter.TclError: no display name and no $DISPLAY environment variable
+
+
+Logging stopped at 15:29:58 on 05 Sep 2022

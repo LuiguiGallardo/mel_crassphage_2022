@@ -1,0 +1,171 @@
+---
+title: "Alpha diversity crAssphage, Beta"
+author: "Luigui Gallardo Becerra"
+date: "13/09/2022"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE)
+library("optparse")
+library("ggplot2")
+library("reshape")
+require("gridExtra")
+library("ggpubr")
+```
+
+```{r, echo=FALSE, warning=FALSE, include=FALSE}
+# Data input
+table <- read.table("allsamples_adiv_beta.tsv",
+                    header=TRUE,
+                    sep="\t",
+                    row.names = 1)
+
+# P-value groups
+p_value <- list(c("NW", "O"), 
+                    c("NW", "OMS"),
+                    c("O", "OMS"))
+
+# Colors
+colors <- c("blue",
+            "orange",
+            "red")
+
+theme_set(theme_bw())
+
+# Boxplot Observed
+boxplot_observed <- ggplot(table,
+                           aes(x = group,
+                               y = observed_otus)) +
+  geom_boxplot(aes(color = group)) +
+  geom_point(aes(color = group),
+             size = 1,
+             shape = 21,
+             position = position_jitterdodge()) +
+  labs(x="", 
+       y="Observed crAssphage") +
+  theme(legend.position = "none") +
+  scale_color_manual(values = colors) +
+  stat_compare_means(comparisons = p_value,
+    method = "wilcox.test",
+    size = 2)
+
+ggsave("boxplot_beta_observed_comp.svg")
+  print(boxplot_observed)
+dev.off()
+
+# Boxplot Chao1
+boxplot_chao1 <- ggplot(table,
+                           aes(x = group,
+                               y = chao1)) +
+  geom_boxplot(aes(color = group)) +
+  geom_point(aes(color = group),
+             size = 1,
+             shape = 21,
+             position = position_jitterdodge()) +
+  labs(x="", 
+       y="Chao1 index") +
+  theme(legend.position = "none") +
+  scale_color_manual(values = colors) +
+  stat_compare_means(comparisons = p_value,
+    method = "wilcox.test",
+    size = 2)
+
+ggsave("boxplot_beta_chao1_comp.svg")
+  print(boxplot_chao1)
+dev.off()
+
+# Boxplot Shannon
+boxplot_shannon <- ggplot(table,
+                           aes(x = group,
+                               y = shannon)) +
+  geom_boxplot(aes(color = group)) +
+  geom_point(aes(color = group),
+             size = 1,
+             shape = 21,
+             position = position_jitterdodge()) +
+  labs(x="", 
+       y="Shannon index") +
+  theme(legend.position = "none") +
+  scale_color_manual(values = colors) +
+  stat_compare_means(comparisons = p_value,
+    method = "wilcox.test",
+    size = 2)
+
+ggsave("boxplot_beta_shannon_comp.svg")
+  print(boxplot_shannon)
+dev.off()
+
+# Boxplot Simpson
+boxplot_simpson <- ggplot(table,
+                           aes(x = group,
+                               y = simpson)) +
+  geom_boxplot(aes(color = group)) +
+  geom_point(aes(color = group),
+             size = 1,
+             shape = 21,
+             position = position_jitterdodge()) +
+  labs(x="", 
+       y="Simpson index") +
+  theme(legend.position = "none") +
+  scale_color_manual(values = colors) +
+  stat_compare_means(comparisons = p_value,
+    method = "wilcox.test",
+    size = 2)
+
+ggsave("boxplot_beta_simpson_comp.svg")
+  print(boxplot_simpson)
+dev.off()
+
+# Boxplot Goods Coverage
+boxplot_goods_coverage <- ggplot(table,
+                           aes(x = group,
+                               y = goods_coverage)) +
+  geom_boxplot(aes(color = group)) +
+  geom_point(aes(color = group),
+             size = 1,
+             shape = 21,
+             position = position_jitterdodge()) +
+  labs(x="", 
+       y="Goods Coverage index") +
+  theme(legend.position = "none") +
+  scale_color_manual(values = colors) +
+  stat_compare_means(comparisons = p_value,
+    method = "wilcox.test",
+    size = 2)
+
+ggsave("boxplot_beta_goods_coverage_comp.svg")
+  print(boxplot_goods_coverage)
+dev.off()
+```
+
+```{r, echo = FALSE}
+boxplot_observed
+```
+
+\newpage
+
+```{r, echo = FALSE}
+boxplot_chao1
+```
+
+\newpage
+
+```{r, echo = FALSE}
+boxplot_shannon
+```
+
+\newpage
+
+```{r, echo = FALSE}
+boxplot_simpson
+```
+
+\newpage
+
+```{r, echo = FALSE}
+boxplot_goods_coverage
+```
+
+\newpage
+
